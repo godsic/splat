@@ -1007,7 +1007,7 @@ void Image::WriteCoverageMap(MapType maptype, ImageType imagetype, Region &regio
         return;
     }
 
-    if (sr.kml) {
+    if (sr.kml && !sr.coverage) {
         /* Write colorkey image file */
         WriteColorKeyImageFile(ckfile, imagetype, maptype, region);
         
