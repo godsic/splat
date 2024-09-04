@@ -2,7 +2,7 @@ FROM quay.io/centos/centos:stream9-minimal
 
 RUN curl https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm --output epel-release && \
     rpm -i epel-release && \
-    microdnf --enablerepo=epel --enablerepo=crb --setopt=install_weak_deps=0 --best --nodocs -y install cmake g++ bzip2-devel libpng-devel gdal-devel libjpeg-turbo-devel zlib-devel git
+    microdnf --enablerepo=epel --enablerepo=crb --setopt=install_weak_deps=0 --best --nodocs -y install cmake g++ bzip2-devel libpng-devel gdal-devel libjpeg-turbo-devel zlib-devel git python3.12
 
 WORKDIR /root/
 RUN git clone https://github.com/godsic/splat.git && \
